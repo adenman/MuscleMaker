@@ -1,0 +1,224 @@
+:root {
+  background-color: #000000 ;
+  color: white;
+}
+/* #20212b */
+html{
+  background-color: #000000 ;
+}
+.mar{
+  margin-top: 120px;
+}
+
+.b{
+  padding: 10px;
+}
+
+.b li{
+  background-color: #03a7aa;
+  margin: 10px;
+  border-radius: 10px;
+  
+}
+
+
+.green{
+  background-color: #24a567;
+}
+
+
+.blue-b{
+  border-color: #03a7aa;
+}
+
+.back{
+  background-color: #106869;
+}
+
+
+
+
+.small-text{
+  font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+.r{
+  background-color: #03a7aa;
+}
+
+
+.g{
+  background-color: #000000
+}
+
+
+.darkbg{
+  background-color: #000000;
+}
+
+.accent{
+  background-color: #097fa3;
+}
+.accentb{
+  border-color: #d0e4bd;
+}
+.accentT{
+  color: #d0e4bd;
+}
+
+.blue-back{
+  background-color: #55868C;
+}
+
+.test2{
+  background-color: #09216e;
+  border-color: #2307c0;
+}
+
+.t{
+  color: white;
+}
+
+
+
+
+
+.stopwatch-time {
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+}
+
+.stopwatch-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.stopwatch-button.running {
+  background-color: red; 
+  color: white;
+}
+
+.stopwatch-button:not(.running) {
+  background-color: #28a745;
+  color: black;
+}
+
+.stopwatch-buttons button {
+  margin: 10px;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  color: black;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+/* Styles for the drag-drop container */
+.drag-drop-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Custom drop area styling */
+.custom-drop-area {
+  width: 200px ; 
+  padding: 10px;
+  border: 2px dashed #55868C ;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #F7A072;
+  color: #F7A072;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-drop-area:hover {
+  background-color: #2b585e;
+}
+
+.custom-drop-area p {
+  margin: 0;
+}
+
+
+
+
+.finished-card {
+  background-color: #19363a; /* Green */
+  color: white;
+}
+.unfinished-card{
+  background-color: #55868C; /* Green */
+  color: white;
+}
+
+
+
+
+.profilepic {
+  position: relative;
+  border-radius: 150px;
+  overflow: hidden;
+  width: 200px;  
+  height: 200px; 
+  margin: 0 auto;
+}
+
+.profilepic:hover .profilepic__content {
+  opacity: 1;
+}
+
+.profilepic:hover .profilepic__image {
+  opacity: .5;
+}
+
+.profilepic__image {
+  object-fit: cover;
+  width: 100%;   
+  height: 100%;   
+  opacity: 1;
+  transition: opacity .2s ease-in-out;
+  
+}
+
+.profilepic__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+
+
+.profilepic__text {
+  text-transform: uppercase;
+  font-size: 12px;
+  width: 50%;
+  text-align: center;
+}
