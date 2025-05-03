@@ -40,7 +40,11 @@ export default function Profile({ onLogout }) {
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      setIsEditing(false);
+      // Set all relevant editing states to false when Enter is pressed
+      // You might refine this logic later if needed
+      setIsEditingName(false);
+      setIsEditingPassword(false);
+      // setIsEditingPfp(false); // Pfp editing seems handled differently via DragDrop cancel
     }
   };
   const handleEditPfpClick = () => {
