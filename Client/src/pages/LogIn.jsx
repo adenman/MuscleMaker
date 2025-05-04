@@ -14,25 +14,27 @@ function Login(props) {
   const [login] = useMutation(LOGIN);
 
   async function submitUser(event) {
-    event.preventDefault()
+    event.preventDefault();
     try {
       const { data } = await login({
-        variables: { 
+        variables: {
           userName: userName,
-          password: password 
+          password: password
         }
       });
-      
+
       if (data && data.login && data.login.token) {
         localStorage.setItem('id_token', data.login.token);
-        window.location.href = '/'; 
+        window.location.href = '/';
       } else {
-        alert('Invalid credentials');
+        // Original code might have had an alert here, ensure proper handling
+        setErrorMessage('Invalid credentials'); // Example using state
       }
-    } catch (error) {
-      const message = err.networkError?.result?.errors?.[0]?.message || err.message;
+    } catch (error) { // <-- Change 'err' to 'error' here
+      // Use 'error' to access properties
+      const message = error.networkError?.result?.errors?.[0]?.message || error.message;
       setErrorMessage(message);
-      console.error('Signup error:', message);
+      console.error('Login error:', message); // Use 'error' here too
     }
   }
 

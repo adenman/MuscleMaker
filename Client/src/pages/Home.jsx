@@ -8,7 +8,7 @@
 // import { GET_REGIMENTS, GET_USER_BY_ID } from '../utils/queries'; // Combined imports
 
 // export default function Home() {
-//   // --- Determine variables BEFORE hooks ---
+//   // --- Determine variables BEFORE hooks --
 //   const isLoggedIn = Auth.loggedIn();
 //   const profile = isLoggedIn ? Auth.getProfile() : null;
 //   const userId = profile?.data?._id; // Get userId safely
