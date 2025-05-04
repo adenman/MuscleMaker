@@ -1,16 +1,16 @@
 {
-  "name": "Fitness-Tracker",
+  "name": "muscle maker",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd Client && npm start\"",
+    "install": "cd server && npm i && cd ../Client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build",
+    "build": "cd Client && npm run build",
     "render-build": "npm install && npm run build",
-    "serve": "cd client && npx serve -s build -l $PORT"
+    "serve": "cd Client && npx serve -s build -l $PORT"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +23,7 @@
     "tailwindcss": "^3.4.14"
   },
   "dependencies": {
-    "@apollo/client": "^3.11.8",
+    "@apollo/Client": "^3.11.8",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@fullcalendar/core": "^6.1.15",
