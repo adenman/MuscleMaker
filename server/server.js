@@ -12,7 +12,7 @@ const db = require('./config/connection');
 
 
 
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 const HOST = '0.0.0.0';
 const app = express();
 const server = new ApolloServer({
@@ -30,7 +30,7 @@ const server = new ApolloServer({
 });
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001'],
+  origin:  'http://localhost:3001',
   credentials: true
 }));
 
