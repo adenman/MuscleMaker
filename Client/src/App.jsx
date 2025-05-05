@@ -26,49 +26,30 @@
 
 // src/App.jsx (Fetching User Data)
 
+// src/App.jsx (Padding for Fixed Header)
+
 import './App.css';
 import './index.css';
 import { Outlet } from 'react-router-dom';
-import Nav from './components/NavTabs';
+import Nav from './components/NavTabs'; // Assuming this uses the custom menu version
 import { WorkoutProvider } from './components/context';
 
-// Imports needed for the query
-import { useQuery } from '@apollo/client';
-import { GET_USER_BY_ID } from './utils/queries'; // Adjust path if needed
-import Auth from './utils/auth'; // Adjust path if needed
+// Imports needed if query moved here (keep if applicable)
+// import { useQuery } from '@apollo/client';
+// import { GET_USER_BY_ID } from './utils/queries';
+// import Auth from './utils/auth';
 
 function App() {
-  // Determine login status and userId here
-  const isLoggedIn = Auth.loggedIn();
-  const profile = isLoggedIn ? Auth.getProfile() : null;
-  const userId = profile?.data?._id;
-
-  // Fetch user data here
-  const { loading: userLoading, error: userError, data: userData } = useQuery(GET_USER_BY_ID, {
-    variables: { userId: userId },
-    skip: !isLoggedIn, // Skip if not logged in
-  });
-
-  console.log("App.jsx: userLoading:", userLoading, "userError:", !!userError, "userData:", !!userData);
-
-  // Handle potential error at this level if needed, or pass it down
-  if (userError) {
-      console.error("Apollo Error fetching user data in App.jsx:", userError);
-      // Decide how to handle error globally - maybe render an error message instead of Nav/Outlet?
-  }
+  // Fetch logic might be here if you moved it previously
 
   return (
     <WorkoutProvider>
-       {/* Pass fetched data and status down to Nav */}
-      <Nav
-        isLoggedIn={isLoggedIn}
-        userId={userId}
-        userLoading={userLoading}
-        userError={userError}
-        userData={userData}
+      <Nav className=""
+        // Pass props if fetch logic is here
       />
 
-      <main className="flex-column justify-center align-center min-100-vh g mx-3">
+      {/* Add top padding here (e.g., pt-16 or pt-20) */}
+      <main className="flex-column justify-center align-center min-100-vh g mx-3 pt-40"> {/* <-- ADD PADDING HERE */}
         <Outlet /> {/* Renders child routes */}
       </main>
     </WorkoutProvider>
