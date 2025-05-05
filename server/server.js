@@ -12,7 +12,7 @@ const db = require('./config/connection');
 
 
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const HOST = '0.0.0.0';
 const app = express();
 const server = new ApolloServer({
@@ -29,8 +29,23 @@ const server = new ApolloServer({
   }
 });
 
+const allowedOrigins = [
+  'http://localhost:3000', // Allow your local React dev server (if it runs on 3000)
+  'http://localhost:3001', // Allow local access if needed
+  // Add your deployed frontend URL here! Replace with your actual Render URL
+  'https://musclemaker.onrender.com' // Example - Replace with your frontend service URL on Render
+];
+
 app.use(cors({
-  origin:  'http://localhost:3001',
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
   credentials: true
 }));
 
