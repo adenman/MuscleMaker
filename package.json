@@ -10,7 +10,7 @@
     "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "npm run Client build", 
+    "build": "npm run build", 
     "render-build": "npm install --frozen-lockfile && npm build", 
     "serve": "cd Client && npx serve -s build -l $PORT"
   },
