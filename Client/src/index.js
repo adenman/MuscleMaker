@@ -58,7 +58,7 @@ root.render(
             {/* Add other routes intended for the main layout */}
           </Route>
 
-          {/* Routes outside the main layout (no Nav bar) */}
+          
           <Route path="/LogIn" element={<LogIn />} />
           <Route path="/SignUp" element={<SignUp />} /> {/* Changed element to use SignUp */}
 
