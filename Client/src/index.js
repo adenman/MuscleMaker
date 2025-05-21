@@ -1,5 +1,3 @@
-// src/index.js (Revised to include Routes)
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Import Routes, Route
@@ -18,13 +16,13 @@ import './index.css';
 import './App.css';
 
 // Component Imports
-import App from './App.jsx'; // Your layout component with <Outlet />
+import App from './App.jsx';
 import Error from "./pages/Error.jsx";
 import Home from "./pages/Home.jsx";
 import LogIn from "./pages/LogIn.jsx";
-import SignUp from "./pages/signup.jsx";
+import SignUp from "./pages/SignUp.jsx"; // Changed from 'signUp' and './pages/signup.jsx'
 import Profile from "./pages/Profile.jsx";
-import NewWorkout from "./pages/newWorkout.jsx";
+import NewWorkout from "./pages/newWorkout.jsx"; // Ensured .jsx, though original was likely okay
 import Regiment from "./pages/Regiment.jsx";
 import Log from "./pages/Log.jsx";
 import reportWebVitals from './reportWebVitals.js';
@@ -62,7 +60,7 @@ root.render(
 
           {/* Routes outside the main layout (no Nav bar) */}
           <Route path="/LogIn" element={<LogIn />} />
-          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/SignUp" element={<SignUp />} /> {/* Changed element to use SignUp */}
 
           {/* Catch-all for unmatched routes */}
           <Route path="*" element={<Error />} />

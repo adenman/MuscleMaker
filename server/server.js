@@ -64,10 +64,13 @@ const startApolloServer = async () => {
 
   // Corrected way in server.js
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
+  // Serve static files from the React app's 'build' directory
+  app.use(express.static(path.join(__dirname, '../Client/build'))); // Changed 'dist' to 'build'
 
+  // The "catchall" handler: for any request that doesn't
+  // match one above, send back React's index.html file.
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+    res.sendFile(path.join(__dirname, '../Client/build/index.html')); // Changed 'dist' to 'build'
   });
 }
 

@@ -31,13 +31,8 @@
 import './App.css';
 import './index.css';
 import { Outlet } from 'react-router-dom';
-import Nav from './components/NavTabs'; // Assuming this uses the custom menu version
-import { WorkoutProvider } from './components/context';
-
-// Imports needed if query moved here (keep if applicable)
-// import { useQuery } from '@apollo/client';
-// import { GET_USER_BY_ID } from './utils/queries';
-// import Auth from './utils/auth';
+import Nav from './components/NavTabs.jsx'; // Added .jsx
+import { WorkoutProvider } from './components/context.jsx'; // Added .jsx
 
 function App() {
   // Fetch logic might be here if you moved it previously
